@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import random
+import asyncio
 
 description = '''An example bot to showcase the discord.ext.commands extension
 module.

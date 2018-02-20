@@ -6,9 +6,15 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.content === 'ping') {
-    	message.reply('pong');
-  	}
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return;
+  
+  if (message.content === 'ping') {
+  	message.reply('pong');
+	}
+  if (message.content === 'info') {
+  	message.reply('info');
+	}
 });
 
 // THIS  MUST  BE  THIS  WAY

@@ -12,4 +12,4 @@ client.on('message', message => {
 });
 
 // THIS  MUST  BE  THIS  WAY
-client.login(process.env.NDE1MjY5NzczODg3NDA2MDgw.DWzeGA.m9zkjoyXZttkEbSfL3RaLkx3pbQ);
+client.login(process.env.BOT_TOKEN);

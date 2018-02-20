@@ -1,12 +1,12 @@
 {
   "name": "ndeogj",
   "description": "ndeogj",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
   },
   "dependencies": {
-    "discord.io": "2.5.3"
+    "discord.io": "github:woor/discord.io#gateway_v6"
   }
 }

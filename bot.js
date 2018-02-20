@@ -3,7 +3,6 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
     console.log('I am ready!');
-    client.user.setActivity("your every move", {type: "WATCHING"});
 });
 
 client.on('message', message => {

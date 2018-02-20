@@ -9,7 +9,7 @@ client.on('ready', function() {
     console.log('Logged in as %s - %s\n', client.username, client.id);
 });
 
-client.on('presence', function() {
+client.on('presence', function(user, userID, status, game, event) {
   client.setPresence({
   	game.name: "On ndeogj"
   });

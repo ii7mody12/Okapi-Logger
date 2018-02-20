@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
     console.log('I am ready!');
-    bot.user.setGame("online");
+    client.user.setActivity("your every command", {type: "FOLLOWING"});
 });
 
 client.on('message', message => {

@@ -21,11 +21,4 @@ client.on('message', function(user, userID, channelID, message, event) {
           embed: "embed???"
       });
     }
-    if (message === "bot.info") {
-      client.sendMessage({
-        to: channelID,
-        message:
-        embed
-      })
-    }
 });

@@ -1,21 +1,37 @@
+const botconfig = require("./botconfig.json");
 const Discord = require('discord.js');
-const client = new Discord.Client();
 
-client.on('ready', () => {
-    console.log('I am ready!');
+const bot = new Discord.Client({disableEveryone: true});
+
+bot.on("ready", async () => {
+  console.log('I am ready!');
 });
 
-client.on('message', message => {
+bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
+
+  let prefix = botconfig.prefix;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+//-------------------------
+//---------botinfo---------
+//-------------------------
+  if(cmd === `${prefix}botinfo`){
+
+    let bicon = bot.user.displayAvatarURL;
+    let botembed = new Discord.RichEmbed()
+    .setDescription("Bot Information")
+    .setColor("#15f153")
+    .setThumbnail(bicon)
+    .addField("Bot Name", bot.user.username)
+    .addField("Created On", bot.user.createdAt);
+
+    return message.channel.send(botembed);
+  }
   
-  if (message.content === 'ping') {
-  	message.reply('pong');
-	}
-  if (message.content === 'info') {
-  	message.reply('info');
-	}
 });
 
 // THIS  MUST  BE  THIS  WAY
-client.login(process.env.BOT_TOKEN);
+bot.login(process.env.BOT_TOKEN);

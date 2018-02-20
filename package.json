@@ -1,7 +1,7 @@
 {
   "name": "ndeogj",
   "description": "ndeogj",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"

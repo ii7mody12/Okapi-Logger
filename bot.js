@@ -18,7 +18,6 @@ client.on('message', function(user, userID, channelID, message, event) {
       client.sendMessage({
           to: channelID,
           message: "pong"
-          embed: "embed???"
       });
     }
 });

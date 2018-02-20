@@ -10,10 +10,10 @@ bot.on('ready', function() {
 });
 
 bot.on('message', function(user, userID, channelID, message, event) {
-    if (message === "ping") {
+    if (message === "ding") {
         bot.sendMessage({
             to: channelID,
-            message: "pong"
+            message: "dong"
         });
     }
 });

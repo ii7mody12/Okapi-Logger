@@ -9,8 +9,14 @@ client.on('ready', function() {
     console.log('Logged in as %s - %s\n', client.username, client.id);
 });
 
+client.on('presence', function() {
+  client.setPresence({
+  	game.name: "On ndeogj"
+  });
+});
+
 client.setPresence({
-	game.name: 'On ndeogj',
+	game.name: "On ndeogj",
 });
 
 client.on('message', function(user, userID, channelID, message, event) {

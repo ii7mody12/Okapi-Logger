@@ -15,10 +15,6 @@ client.on('presence', function() {
   });
 });
 
-client.setPresence({
-	game.name: "On ndeogj",
-});
-
 client.on('message', function(user, userID, channelID, message, event) {
     if (message === "bot.ping") {
       client.sendMessage({

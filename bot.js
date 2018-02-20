@@ -1,19 +1,31 @@
 var Discord = require('discord.io');
 
-var bot = new Discord.Client({
+var client = new Discord.Client({
     token: "NDE1MjY5NzczODg3NDA2MDgw.DW18-w.rWFfcZzfeqDIYalhhASvGzfFiss",
     autorun: true
 });
 
-bot.on('ready', function() {
-    console.log('Logged in as %s - %s\n', bot.username, bot.id);
+client.on('ready', function() {
+    console.log('Logged in as %s - %s\n', client.username, client.id);
 });
 
-bot.on('message', function(user, userID, channelID, message, event) {
-    if (message === "ding") {
-        bot.sendMessage({
-            to: channelID,
-            message: "dong"
-        });
+client.setPresence({
+	game.name: 'On ndeogj',
+});
+
+client.on('message', function(user, userID, channelID, message, event) {
+    if (message === "bot.ping") {
+      client.sendMessage({
+          to: channelID,
+          message: "pong"
+          embed: "embed???"
+      });
+    }
+    if (message === "bot.info") {
+      client.sendMessage({
+        to: channelID,
+        message:
+        embed
+      })
     }
 });

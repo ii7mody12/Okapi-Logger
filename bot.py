@@ -1,22 +1,18 @@
 import discord
+from discord.ext import commands
 
-client = discord.Client()
+bot = commands.Bot(command_prefix='.')
 
-@client.event
-async def on_message(message):
-    # we do not want the bot to reply to itself
-    if message.author == client.user:
-        return
-
-    if message.content.startswith('!hello'):
-        msg = 'Hello {0.author.mention}'.format(message)
-        await client.send_message(message.channel, msg)
-
-@client.event
+@bot.event
 async def on_ready():
     print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
-    print('------')
+    print(bot.user.name)
+    print(bot.user.id)
+    print('----------')
 
-client.run('NDE1MjY5NzczODg3NDA2MDgw.DW18-w.rWFfcZzfeqDIYalhhASvGzfFiss')
+@bot.command()
+async def play(ctx, *, play: str):
+    await bot.change_presence(game=discord.Game(name=play))
+    await ctx.send(f"Thanks to {ctx.author.mention} I'm playing {play}.")
+
+bot.run('NDE1MjY5NzczODg3NDA2MDgw.DW18-w.rWFfcZzfeqDIYalhhASvGzfFiss')

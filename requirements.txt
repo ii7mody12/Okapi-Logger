@@ -2,4 +2,4 @@ git+https://github.com/Rapptz/discord.py@rewrite#egg=discord.py
 aiohttp
 websockets
 chardet
-time=^0.1
+time=16.3

@@ -6,5 +6,4 @@ discord
 psutil
 asyncio
 async_timeout
-os >= 16
 inspect

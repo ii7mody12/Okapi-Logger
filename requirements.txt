@@ -6,6 +6,5 @@ discord
 psutil
 asyncio
 async_timeout
-hashlib
 os
 inspect

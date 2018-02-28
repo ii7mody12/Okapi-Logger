@@ -18,16 +18,16 @@ emoji_name2 = (":blobglare:", ":blobidea:", ":blobkir:", ":bloblul:", ":blobmous
 emoji_id1 = ("<:blob0w0:417370606921711616>", "<:blobamused:417370692837965834>", "<:blobangel:417370783061639170>", "<:blobangery:417370804620361739>", "<:blobangry:417370828334825482>", "<:blobastonished:417370990054604820>", "<:blobawkward:417370961332011028>", "<:blobaww:417370941421781005>", "<:blobconfounded:417434303933186049>", "<:blobconfused:417371065220726784>", "<:blobcool:417371114239688704>", "<:blobcry:417371183592505344>", "<:blobdead:417371212474482699>", "<:blobderpy:417373351888027648>", "<:blobdetective:417371304669347855>", "<:blobdevil:417371368959508481>", "<:blobdizzy:417371345060626443>", "<:blobdrool:417371457622900737>", "<:blobexpressionless:417371486542626818>", "<:blobeyes:417371513860259841>", "<:blobfacepalm:417371534517207044>", "<:blobfearful:417371561243181077>", "<:blobfrown:417371640612126725>", "<:blobfrowningbig:417371683230318602>", "<:blobgentle:417373047649992716>")
 emoji_id2 = ("<:blobglare:417371723986370570>", "<:blobidea:417371832740610048>", "<:blobkir:417433992351055872>", "<:bloblul:417371886738210827>", "<:blobmoustache:417371932858646549>", "<:blobnauseated:417370910325080064>", "<:blobnelly:417373712254369797>", "<:blobnogood:417433715338117121>", "<:blobokhand:417372042866851851>", "<:blobonfire:417372080464723994>", "<:blobowoevil:417372388737548289>", "<:blobrain:417373379289415690>", "<:blobrick:417373415167492104>", "<:blobsleeping:417372438137929729>", "<:blobsleepless:417372530047713280>", "<:blobsmile:417372558275641345>", "<:blobsmirk:417372610515566602>", "<:blobspy:417372667323219968>", "<:blobthinking:417372736529235989>", "<:blobthumbsdown:417372896248463360>", "<:blobtilt:417372292260298762>", "<:blobunsure:417373235554942986>", "<:blobwoah:417438617083052128>", "<:discord:417169255629455371>", "<:python:417167904342278155>")
 colors = [discord.Colour.red(), discord.Colour.orange(), discord.Colour.gold(), discord.Colour.teal(), discord.Colour.green(), discord.Colour.blue(), discord.Colour.purple()]
-bot = commands.Bot(command_prefix='test.')
+bot = commands.Bot(command_prefix='.')
 bot.remove_command('help')
 
 @bot.event
 async def on_ready():
-    print(' -----------------------------------')
-    print(' -----------------------------------')
-    print('NDEOGJ TEST BOT IS ONLINE AND WORKING')
-    print(' -----------------------------------')
-    print(' -----------------------------------')
+    print(' ------------------------------')
+    print(' ------------------------------')
+    print('NDEOGJ BOT IS ONLINE AND WORKING')
+    print(' ------------------------------')
+    print(' ------------------------------')
     print('')
 
 @bot.command()

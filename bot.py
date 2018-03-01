@@ -42,6 +42,7 @@ async def ping(ctx):
     embed = discord.Embed(color=random.choice(colors))
     embed.add_field(name="Pong!", value=f"Latency: `{bot.latency * 1000:.0f}ms`")
     await ctx.send(embed=embed)
+    await ctx.send("<:loading:418291364221157386>")
 
 @bot.command()
 async def rules(ctx):
@@ -101,7 +102,7 @@ async def say(ctx, *, text):
 @bot.command()
 async def embed(ctx, *, text):
     await ctx.message.delete()
-    embed=discord.Embed(title=text, description="-Anonymous")
+    embed=discord.Embed(title=f'"{text}"', description="-Anonymous")
     await ctx.send(embed=embed)
 
 @bot.command()
@@ -111,13 +112,17 @@ async def emoji(ctx):
     for indexval in range(25):
         embed.add_field(inline=True, value=emoji_name1[indexval], name=emoji_id1[indexval])
     embed.set_footer(text="Just An Okapi", icon_url=okapiicon)
-    await ctx.author.message.send(embed=embed)
+    await ctx.message.author.send(embed=embed)
     embed=discord.Embed(color=random.choice(colors))
     indexval = 0
     for indexval in range(25):
         embed.add_field(inline=True, value=emoji_name2[indexval], name=emoji_id2[indexval])
     embed.set_footer(text="Just An Okapi", icon_url=okapiicon)
-    await ctx.author.message.send(embed=embed)
+    await ctx.message.author.send(embed=embed)
+    embed=discord.Embed(color=random.choice(colors))
+    embed.add_field(inline=False, value="There You Go!", name="<:blob0w0:417370606921711616>")
+    embed.set_footer(text="Just An Okapi", icon_url=okapiicon)
+    await ctx.message.author.send(embed=embed)
     embed=discord.Embed(description=f"{ctx.author.mention} Check Your DM's!",color=random.choice(colors))
     await ctx.send(embed=embed)
 

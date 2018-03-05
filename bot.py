@@ -42,7 +42,7 @@ async def ping(ctx):
     embed = discord.Embed(color=random.choice(colors))
     embed.add_field(name="Pong!", value=f"Latency: `{bot.latency * 1000:.0f}ms`")
     await ctx.send(embed=embed)
-    await ctx.send("<:loading:418291364221157386>")
+    await ctx.send("<:a:loading:418291364221157386>")
 
 @bot.command()
 async def rules(ctx):

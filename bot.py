@@ -31,10 +31,33 @@ async def on_ready():
     print('')
 
 @bot.command()
-async def play(ctx, *, play: str):
-    await bot.change_presence(game=discord.Game(name=play))
+async def play(ctx):
     embed = discord.Embed(color=random.choice(colors))
-    embed.add_field(name=f"I'm Now Playing `{play}`,", value=f"Thanks To {ctx.author.mention}!")
+    embed.add_field(name=".playing game name", value="Set Status To Playing")
+    embed.add_field(name=".listening song name", value="Set Status To Listening")
+    embed.add_field(name=".watching video name", value="Set Status To Watching")
+    embed.set_footer(text="Just An Okapi", icon_url=okapiicon)
+    await ctx.send(embed=embed)
+
+@bot.command()
+async def playing(ctx, *, text: str):
+    await bot.change_presence(activity=discord.Game(name=text))
+    embed = discord.Embed(color=random.choice(colors))
+    embed.add_field(name=f"I'm Now Playing `{text}`,", value=f"Thanks To {ctx.author.mention}!")
+    await ctx.send(embed=embed)
+
+@bot.command()
+async def listening(ctx, *, text: str):
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=text))
+    embed = discord.Embed(color=random.choice(colors))
+    embed.add_field(name=f"I'm Now Listening To `{text}`,", value=f"Thanks To {ctx.author.mention}!")
+    await ctx.send(embed=embed)
+
+@bot.command()
+async def watching(ctx, *, text: str):
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=text))
+    embed = discord.Embed(color=random.choice(colors))
+    embed.add_field(name=f"I'm Now Watching `{text}`,", value=f"Thanks To {ctx.author.mention}!")
     await ctx.send(embed=embed)
 
 @bot.command()
@@ -132,7 +155,7 @@ async def help(ctx):
     embed.add_field(name=".help", value="Explains how to use commands.", inline=False)
     embed.add_field(name=".info", value="Tells what the info commands are.", inline=False)
     embed.add_field(name=".rules", value="Tells what the current rules are.", inline=False)
-    embed.add_field(name=".play game", value="Sets the bots current playing status.", inline=False)
+    embed.add_field(name=".play", value="Tells what the play commands are.", inline=False)
     embed.add_field(name=".say text", value="Says what you want it to.", inline=False)
     embed.add_field(name=".embed text", value="Says what you want it to in an embed.", inline=False)
     embed.add_field(name=".ping", value="Checks latency of the bot.", inline=False)

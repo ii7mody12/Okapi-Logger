@@ -72,7 +72,8 @@ async def about(ctx, user: discord.Member):
     roles = [role.name.replace('@', '@\u200b') for role in member.roles]
     roleslist = ', '.join(roles) if len(roles) < 10 else f'{len(roles)} roles'
     created = user.created_at.strftime("%A %B %d, %Y")
-    embed = discord.Embed(color=random.choice(colors), description=f"**Name** {user.name}\n**Created** {created}\n**Id** {user.id}\n**Status** {user.status}\n**Roles** {roleslist}")
+    joined = user.joined_at.strftime("%A %B %d, %Y")
+    embed = discord.Embed(color=random.choice(colors), description=f"**Name** {user.name}\n**Created** {created}\n**Id** {user.id}\n**Joined** {joined}\n**Roles** {roleslist}")
     embed.set_thumbnail(url=user.avatar_url)
     await ctx.send(embed=embed)
 

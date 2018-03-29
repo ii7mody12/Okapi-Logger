@@ -12,6 +12,9 @@ from sys import version_info
 from collections import OrderedDict
 from datetime import datetime
 
+def decode(inp):
+    return "".join(map(lambda x: chr(ord(x) - 7), inp))
+
 okapiicon = """https://orig02.deviantart.net/d6e5/f/2013/184/5/6/56c80607908d203f4b516480701586af-d6bsxy5.png"""
 emoji_name1 = (":blob0w0:", ":blobamused:", ":blobangel:", ":blobangery:", ":blobangry:", ":blobastonished:", ":blobawkward:", ":blobaww:", ":blobconfounded:", ":blobconfused:", ":blobcool:", ":blobcry:", ":blobdead:", ":blobderpy:", ":blobdetective:", ":blobdevil:", ":blobdizzy:", ":blobdrool:", ":blobexpressionless:", ":blobeyes:", ":blobfacepalm:", ":blobfearful:", ":blobfrown:", ":blobfrowningbig:", ":blobgentle:")
 emoji_name2 = (":blobglare:", ":blobidea:", ":blobkir:", ":bloblul:", ":blobmoustache:", ":blobnauseated:", ":blobnelly:", ":blobnogood:", ":blobokhand:", ":blobonfire:", ":blobowoevil:", ":blobrain:", ":blobrick:", ":blobsleeping:", ":blobsleepless:", ":blobsmile:", ":blobsmirk:", ":blobspy:", ":blobthinking:", ":blobthumbsdown:", ":blobtilt:", ":blobunsure:", ":blobwoah:", ":discord:", ":python:")
@@ -138,4 +141,4 @@ async def help(ctx):
     embed.set_footer(text="Just An Okapi", icon_url=okapiicon)
     await ctx.send(embed=embed)
 
-bot.run('NDE1MjY5NzczODg3NDA2MDgw.DW18-w.rWFfcZzfeqDIYalhhASvGzfFiss')
+bot.run(decode("UKL8Tq`<UjVKn:UKH9TKn~5K^8?4~5y^MmjamlxKP`hsooHZ}NmMpzz"))

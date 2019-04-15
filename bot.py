@@ -1,36 +1,33 @@
-import inspect
-import os
-import hashlib
-import async_timeout
-import asyncio
-import random
-import psutil
 import discord
+from discord import Member
+from discord import Status
 from discord.ext import commands
-from pkg_resources import get_distribution
-from sys import version_info
-from collections import OrderedDict
-from datetime import datetime
+from discord.ext.commands import has_permissions, CheckFailure
+from collections import Counter
+from discord.utils import get
 
-def decode(inp):
-    return "".join(map(lambda x: chr(ord(x) - 7), inp))
 
-colors = [discord.Colour.red(), discord.Colour.orange(), discord.Colour.gold(), discord.Colour.teal(), discord.Colour.green(), discord.Colour.blue(), discord.Colour.purple()]
-bot = commands.Bot(command_prefix=commands.when_mentioned_or('log.'))
+TOKEN = "BOT TOKEN"
+bot = commands.Bot(command_prefix='-')
 bot.remove_command('help')
 
 @bot.event
 async def on_ready():
-    print(' ------------------------------')
-    print(' ------------------------------')
-    print('LOGGER BOT IS ONLINE AND WORKING')
-    print(' ------------------------------')
-    print(' ------------------------------')
-    print('')
+    print(f"Im Ready {len(bot.servers)}")
+    print(f"Bot Members {len(set(bot.get_all_members()))}")
+    print(f"Bot Channels {len(set(bot.get_all_channels()))}")
+    print(f"Bot Server {len(bot.servers)}")
 
-@bot.command()
-async def log(ctx):
-    await guild.create_text_channel('Log')
-    await ctx.send("Chanel Created!")
+@bot.command(pass_context=True)
+async def join(ctx, channel: discord.Channel):
+        await bot.send_message(ctx.message.channel, 'لا')
+        msg = await bot.wait_for_message(author=ctx.message.author, content='بليز')
+        await bot.send_message(ctx.message.channel, 'لا')
+        msg = await bot.wait_for_message(author=ctx.message.author, content='بليز')
+        await bot.send_message(ctx.message.channel, 'لا')
+        msg = await bot.wait_for_message(author=ctx.message.author, content='ليز')     
+        await bot.send_message(ctx.message.channel, 'K')                   
+        await bot.join_voice_channel(channel)
 
-bot.run(decode("UKT~VKL\x81TKL~V[r<V[H\x80TqH<5KhsyaH5QkIHT||\x81<~`|O@ZnhmhqkI{W]8P"))
+
+bot.run(TOKEN)

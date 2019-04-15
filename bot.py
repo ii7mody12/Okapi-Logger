@@ -7,7 +7,7 @@ from collections import Counter
 from discord.utils import get
 
 
-TOKEN = "BOT TOKEN"
+TOKEN = "NTYwNzk3NzgxMzEzNDU0MDkx.XLTaaA.AB3UDZ9KYFBlxlpk_2rIbY3Od0M"
 bot = commands.Bot(command_prefix='-')
 bot.remove_command('help')
 

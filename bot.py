@@ -33,4 +33,4 @@ async def log(ctx):
     await guild.create_text_channel('Log')
     await ctx.send("Chanel Created!")
 
-bot.run(decode("UKT~VKL\x81TKL~V[r<V[H\x80TqH<5KhsyaH5QkIHT||\x81<~`|O@ZnhmhqkI{W]8P"))
+bot.run(decode(""))
